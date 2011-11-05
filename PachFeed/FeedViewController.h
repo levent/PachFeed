@@ -10,6 +10,7 @@
 
 @interface FeedViewController : UIViewController {
     NSString *feedId;
+    NSString *streamId;
     NSString *apiKey;
     
     IBOutlet UIImageView *feedGraph;

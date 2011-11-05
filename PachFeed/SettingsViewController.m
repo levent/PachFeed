@@ -41,6 +41,7 @@
 - (void)viewDidLoad
 {
     [feedIdField setText:[[NSUserDefaults standardUserDefaults] objectForKey:@"feedId"]];
+    [streamIdField setText:[[NSUserDefaults standardUserDefaults] objectForKey:@"streamId"]];
     [apiKeyField setText:[[NSUserDefaults standardUserDefaults] objectForKey:@"apiKey"]];
     [super viewDidLoad];
 }
@@ -66,6 +67,11 @@
     [feedIdField setText:feedId];
     NSUserDefaults *feedIdDefault = [NSUserDefaults standardUserDefaults];
     [feedIdDefault setObject:feedId forKey:@"feedId"];
+
+    streamId = [[NSString alloc] initWithFormat:streamIdField.text];
+    [streamIdField setText:streamId];
+    NSUserDefaults *streamIdDefault = [NSUserDefaults standardUserDefaults];
+    [streamIdDefault setObject:streamId forKey:@"streamId"];
     
     apiKey = [[NSString alloc] initWithFormat:apiKeyField.text];
     [apiKeyField setText:apiKey];
@@ -82,6 +88,7 @@
 
 - (IBAction)backgroundClick:(id)sender {
     [feedIdField resignFirstResponder];
+    [streamIdField resignFirstResponder];
     [apiKeyField resignFirstResponder];
 }
 @end

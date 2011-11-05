@@ -35,12 +35,13 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUIImageView" id="214085310">
+					<object class="IBUIImageView" id="690923340">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{20, 20}, {280, 371}}</string>
+						<string key="NSFrame">{{15, 20}, {280, 341}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:567</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -49,7 +50,7 @@
 				<string key="NSFrame">{{0, 20}, {320, 411}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
+				<reference key="NSNextKeyView" ref="690923340"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -73,7 +74,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">feedGraph</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="214085310"/>
+						<reference key="destination" ref="690923340"/>
 					</object>
 					<int key="connectionID">11</int>
 				</object>
@@ -90,7 +91,7 @@
 						<int key="objectID">1</int>
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="214085310"/>
+							<reference ref="690923340"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -107,7 +108,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">10</int>
-						<reference key="object" ref="214085310"/>
+						<reference key="object" ref="690923340"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>

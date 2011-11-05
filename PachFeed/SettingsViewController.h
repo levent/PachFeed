@@ -10,9 +10,11 @@
 
 @interface SettingsViewController : UIViewController {
     NSString *feedId;
+    NSString *streamId;
     NSString *apiKey;
     
     IBOutlet UITextField *feedIdField;
+    IBOutlet UITextField *streamIdField;
     IBOutlet UITextField *apiKeyField;
 }
 
