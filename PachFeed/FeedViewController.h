@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FeedViewController : UIViewController
+@interface FeedViewController : UIViewController {
+    NSString *feedId;
+    NSString *apiKey;
+    
+    IBOutlet UIImageView *feedGraph;
+}
 
 @end

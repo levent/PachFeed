@@ -31,7 +31,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
@@ -42,12 +41,18 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated
-{
+{ 
+    feedId = [[NSUserDefaults standardUserDefaults] objectForKey:@"feedId"];
     [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    NSString *url = [[NSString alloc] initWithFormat:@"http://api.pachube.com/v2/feeds/%@/datastreams/0.png?duration=24hours&width=%.0f&height=%.0f", feedId, feedGraph.frame.size.width, feedGraph.frame.size.height]; 
+    NSLog(url);
+    NSData *receivedGraph = [[NSData dataWithContentsOfURL:[NSURL URLWithString:url]] retain];
+    UIImage *image = [[UIImage alloc] initWithData:receivedGraph];
+    feedGraph.image = image;
     [super viewDidAppear:animated];
 }
 
