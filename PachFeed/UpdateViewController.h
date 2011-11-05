@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  UpdateViewController.h
 //  PachFeed
 //
 //  Created by Levent Ali on 05/11/2011.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface UpdateViewController : UIViewController
 
 @end

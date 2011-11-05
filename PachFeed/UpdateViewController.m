@@ -1,21 +1,21 @@
 //
-//  FirstViewController.m
+//  UpdateViewController.m
 //  PachFeed
 //
 //  Created by Levent Ali on 05/11/2011.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "UpdateViewController.h"
 
-@implementation FirstViewController
+@implementation UpdateViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"First", @"First");
-        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        self.title = NSLocalizedString(@"Feed Update", @"Feed Update");
+        self.tabBarItem.image = [UIImage imageNamed:@"187-pencil"];
     }
     return self;
 }

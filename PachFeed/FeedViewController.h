@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  FeedViewController.h
 //  PachFeed
 //
 //  Created by Levent Ali on 05/11/2011.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface FeedViewController : UIViewController
 
 @end

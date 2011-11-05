@@ -1,21 +1,21 @@
 //
-//  SecondViewController.m
+//  FeedViewController.m
 //  PachFeed
 //
 //  Created by Levent Ali on 05/11/2011.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "FeedViewController.h"
 
-@implementation SecondViewController
+@implementation FeedViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Second", @"Second");
-        self.tabBarItem.image = [UIImage imageNamed:@"second"];
+        self.title = NSLocalizedString(@"Feed View", @"Feed View");
+        self.tabBarItem.image = [UIImage imageNamed:@"122-stats"];
     }
     return self;
 }
