@@ -43,7 +43,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    feedId = [[NSUserDefaults standardUserDefaults] objectForKey:@"feedId"];
+    streamId = [[NSUserDefaults standardUserDefaults] objectForKey:@"streamId"];
+    apiKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"apiKey"];
     [super viewWillAppear:animated];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -71,4 +75,34 @@
     }
 }
 
+- (IBAction)updateCurrentValue:(id)sender {
+    [self backgroundClick:sender];
+    NSString *url = [[NSString alloc] initWithFormat:@"http://api.pachube.com/v2/feeds/%@/datastreams/%@.csv?key=%@", feedId, streamId, apiKey]; 
+    responseData = [[NSMutableData data] retain];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setHTTPMethod:@"PUT"];
+    NSString *postString = [currentValueField text];
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+}
+
+- (IBAction)backgroundClick:(id)sender {
+    [currentValueField resignFirstResponder];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+	[responseData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+	[responseData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+	NSLog([NSString stringWithFormat:@"Connection failed: %@", [error description]]);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+	[connection release];
+}
 @end

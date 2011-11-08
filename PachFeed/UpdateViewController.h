@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UpdateViewController : UIViewController
+@interface UpdateViewController : UIViewController {
+    NSString *feedId;
+    NSString *streamId;
+    NSString *apiKey;
+    
+    IBOutlet UITextField *currentValueField;
+    NSMutableData *responseData;
+}
+
+-(IBAction)updateCurrentValue: (id)sender;
+-(IBAction)backgroundClick: (id)sender;
 
 @end

@@ -78,7 +78,6 @@
     NSUserDefaults *apiKeyDefault = [NSUserDefaults standardUserDefaults];
     [apiKeyDefault setObject:apiKey forKey:@"apiKey"];
     
-    NSLog(@"also here");
     [self backgroundClick:sender];
 }
 
@@ -91,4 +90,5 @@
     [streamIdField resignFirstResponder];
     [apiKeyField resignFirstResponder];
 }
+
 @end
