@@ -49,7 +49,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    NSString *url = [[NSString alloc] initWithFormat:@"http://api.pachube.com/v2/feeds/%@/datastreams/%@.png?duration=1hour&width=%.0f&height=%.0f", feedId, streamId, feedGraph.frame.size.width, feedGraph.frame.size.height]; 
+    NSString *url = [[NSString alloc] initWithFormat:@"http://api.pachube.com/v2/feeds/%@/datastreams/%@.png?duration=1hour&width=%.0f&height=%.0f&title=Feed:+%@", feedId, streamId, feedGraph.frame.size.width, feedGraph.frame.size.height, feedId];
     NSData *receivedGraph = [[NSData dataWithContentsOfURL:[NSURL URLWithString:url]] retain];
     UIImage *image = [[UIImage alloc] initWithData:receivedGraph];
     feedGraph.image = image;
