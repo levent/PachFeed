@@ -14,7 +14,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Feed Update", @"Feed Update");
+        self.title = NSLocalizedString(@"Update", @"Update");
         self.tabBarItem.image = [UIImage imageNamed:@"187-pencil"];
     }
     return self;
@@ -99,7 +99,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-	NSLog([NSString stringWithFormat:@"Connection failed: %@", [error description]]);
+	NSLog(@"Connection failed: %@", [error description]);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {

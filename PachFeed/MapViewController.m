@@ -79,7 +79,7 @@
     MKCoordinateRegion adjustedRegion = [feedMap regionThatFits:viewRegion];
     [feedMap setRegion:adjustedRegion animated:YES];
     
-    NSString *url = [[NSString alloc] initWithFormat:@"http://api.pachube.com/v2/feeds.json?lat=%f&lon=%f&key=%@", location.coordinate.latitude, location.coordinate.longitude, apiKey]; 
+    NSString *url = [[NSString alloc] initWithFormat:@"http://api.pachube.com/v2/feeds.json?lat=%f&lon=%f&key=%@&distance=50", location.coordinate.latitude, location.coordinate.longitude, apiKey]; 
     responseData = [[NSMutableData data] retain];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"GET"];
@@ -109,7 +109,6 @@
 
     for (NSDictionary *feed in [object objectForKey:@"results"])
     {
-        NSLog(@"location: %@", [feed objectForKey:@"location"]);
         NSLog(@"lat: %@", [[feed objectForKey:@"location"] objectForKey:@"lat"]);
         NSLog(@"lon: %@", [[feed objectForKey:@"location"] objectForKey:@"lon"]);
         MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
@@ -122,7 +121,6 @@
         [feedMap addAnnotation:annot];
     }
     
-//    NSLog(@"%@", [object objectForKey:@"results"]);
 }
 
 - (void)locationError:(NSError *)error {

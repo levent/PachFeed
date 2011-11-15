@@ -14,7 +14,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Feed View", @"Feed View");
+        self.title = NSLocalizedString(@"Graph", @"Graph");
         self.tabBarItem.image = [UIImage imageNamed:@"122-stats"];
     }
     return self;
@@ -49,7 +49,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    NSString *url = [[NSString alloc] initWithFormat:@"http://api.pachube.com/v2/feeds/%@/datastreams/%@.png?duration=1hour&width=%.0f&height=%.0f@", feedId, streamId, feedGraph.frame.size.width, feedGraph.frame.size.height];
+    NSString *url = [[NSString alloc] initWithFormat:@"http://api.pachube.com/v2/feeds/%@/datastreams/%@.png?duration=1hour&width=%.0f&height=%.0f", feedId, streamId, feedGraph.frame.size.width, feedGraph.frame.size.height];
     NSData *receivedGraph = [[NSData dataWithContentsOfURL:[NSURL URLWithString:url]] retain];
     UIImage *image = [[UIImage alloc] initWithData:receivedGraph];
     feedGraph.image = image;

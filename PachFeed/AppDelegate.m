@@ -36,13 +36,13 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         viewController1 = [[[FeedViewController alloc] initWithNibName:@"FeedViewController_iPhone" bundle:nil] autorelease];
         viewController2 = [[[UpdateViewController alloc] initWithNibName:@"UpdateViewController_iPhone" bundle:nil] autorelease];
-        viewController3 = [[[SettingsViewController alloc] initWithNibName:@"SettingsViewController_iPhone" bundle:nil] autorelease];
-        viewController4 = [[[MapViewController alloc] initWithNibName:@"MapViewController_iPhone" bundle:nil] autorelease];
+        viewController3 = [[[MapViewController alloc] initWithNibName:@"MapViewController_iPhone" bundle:nil] autorelease];
+        viewController4 = [[[SettingsViewController alloc] initWithNibName:@"SettingsViewController_iPhone" bundle:nil] autorelease];
     } else {
         viewController1 = [[[FeedViewController alloc] initWithNibName:@"FeedViewController_iPad" bundle:nil] autorelease];
         viewController2 = [[[UpdateViewController alloc] initWithNibName:@"UpdateViewController_iPad" bundle:nil] autorelease];
-        viewController3 = [[[SettingsViewController alloc] initWithNibName:@"SettingsViewController_iPad" bundle:nil] autorelease];
-        viewController4 = [[[MapViewController alloc] initWithNibName:@"MapViewController_iPad" bundle:nil] autorelease];
+        viewController3 = [[[MapViewController alloc] initWithNibName:@"MapViewController_iPad" bundle:nil] autorelease];
+        viewController4 = [[[SettingsViewController alloc] initWithNibName:@"SettingsViewController_iPad" bundle:nil] autorelease];
     }
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, viewController3, viewController4, nil];
