@@ -19,6 +19,8 @@
 		2B208A7114731DDB00B25E51 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B208A6314731DDB00B25E51 /* SBJsonTokeniser.m */; };
 		2B208A7214731DDB00B25E51 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B208A6514731DDB00B25E51 /* SBJsonUTF8Stream.m */; };
 		2B208A7314731DDB00B25E51 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B208A6714731DDB00B25E51 /* SBJsonWriter.m */; };
+		2B208A7914732D2500B25E51 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B208A7814732D2500B25E51 /* icon@2x.png */; };
+		2B208A7B14732D2D00B25E51 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B208A7A14732D2D00B25E51 /* icon.png */; };
 		2B294F8F1472F2130096857A /* 103-map.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B294F8D1472F2130096857A /* 103-map.png */; };
 		2B294F901472F2130096857A /* 103-map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B294F8E1472F2130096857A /* 103-map@2x.png */; };
 		2B294F981472F8720096857A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B294F971472F8720096857A /* CoreLocation.framework */; };
@@ -79,6 +81,8 @@
 		2B208A6514731DDB00B25E51 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		2B208A6614731DDB00B25E51 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		2B208A6714731DDB00B25E51 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		2B208A7814732D2500B25E51 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		2B208A7A14732D2D00B25E51 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		2B294F8D1472F2130096857A /* 103-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map.png"; sourceTree = "<group>"; };
 		2B294F8E1472F2130096857A /* 103-map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map@2x.png"; sourceTree = "<group>"; };
 		2B294F971472F8720096857A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -173,6 +177,8 @@
 		2B9D7573146526FD00773D5A = {
 			isa = PBXGroup;
 			children = (
+				2B208A7A14732D2D00B25E51 /* icon.png */,
+				2B208A7814732D2500B25E51 /* icon@2x.png */,
 				2B294F9C147303010096857A /* MapKit.framework */,
 				2B294F971472F8720096857A /* CoreLocation.framework */,
 				2B9D7588146526FD00773D5A /* PachFeed */,
@@ -320,6 +326,8 @@
 				2B891B1E1472F0EA00FB908B /* MapViewController_iPhone.xib in Resources */,
 				2B294F8F1472F2130096857A /* 103-map.png in Resources */,
 				2B294F901472F2130096857A /* 103-map@2x.png in Resources */,
+				2B208A7914732D2500B25E51 /* icon@2x.png in Resources */,
+				2B208A7B14732D2D00B25E51 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
