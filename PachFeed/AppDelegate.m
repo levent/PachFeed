@@ -14,6 +14,8 @@
 
 #import "SettingsViewController.h"
 
+#import "MapViewController.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -30,18 +32,20 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    UIViewController *viewController1, *viewController2, *viewController3;
+    UIViewController *viewController1, *viewController2, *viewController3, *viewController4;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         viewController1 = [[[FeedViewController alloc] initWithNibName:@"FeedViewController_iPhone" bundle:nil] autorelease];
         viewController2 = [[[UpdateViewController alloc] initWithNibName:@"UpdateViewController_iPhone" bundle:nil] autorelease];
         viewController3 = [[[SettingsViewController alloc] initWithNibName:@"SettingsViewController_iPhone" bundle:nil] autorelease];
+        viewController4 = [[[MapViewController alloc] initWithNibName:@"MapViewController_iPhone" bundle:nil] autorelease];
     } else {
         viewController1 = [[[FeedViewController alloc] initWithNibName:@"FeedViewController_iPad" bundle:nil] autorelease];
         viewController2 = [[[UpdateViewController alloc] initWithNibName:@"UpdateViewController_iPad" bundle:nil] autorelease];
         viewController3 = [[[SettingsViewController alloc] initWithNibName:@"SettingsViewController_iPad" bundle:nil] autorelease];
+        viewController4 = [[[MapViewController alloc] initWithNibName:@"MapViewController_iPad" bundle:nil] autorelease];
     }
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, viewController3, nil];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, viewController3, viewController4, nil];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;

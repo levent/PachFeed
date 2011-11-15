@@ -14,6 +14,7 @@
     NSString *apiKey;
     
     IBOutlet UIImageView *feedGraph;
+    IBOutlet UINavigationItem *navigationBarTitle;
 }
 
 @end
