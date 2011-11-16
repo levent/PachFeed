@@ -10,7 +10,7 @@
 #import "CLController.h"
 #import "SBJson.h"
 
-@interface MapViewController : UIViewController {
+@interface MapViewController : UIViewController <MKMapViewDelegate> {
     NSString *apiKey;
     
     CLController *locationController;

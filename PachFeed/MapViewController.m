@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "MapFeedAnnotation.h"
 
 @implementation MapViewController
 
@@ -48,6 +49,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    feedMap.delegate = self;
     locationController = [[CLController alloc] init];
     locationController.delegate = self;
     [locationController.locationManager startMonitoringSignificantLocationChanges];   
@@ -57,18 +59,34 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    MKMapView *mapView = (MKMapView*)self.view;
+
 }
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+    MKPinAnnotationView *pinView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+    if(pinView == nil) {
+        pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+        pinView.pinColor = MKPinAnnotationColorRed;
+        pinView.animatesDrop = YES;
+    } else {
+        pinView.annotation = annotation;
+    }
+    return pinView;
+}
+
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [locationController.locationManager stopMonitoringSignificantLocationChanges];
+    [feedMap release];
+    feedMap = nil;
     NSLog(@"View did disappear");
 }
 
 - (void)viewDidUnload
 {
-    [feedMap release];
-    feedMap = nil;
+
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -119,17 +137,22 @@
 
     for (NSDictionary *feed in [object objectForKey:@"results"])
     {
-        NSLog(@"lat: %@", [[feed objectForKey:@"location"] objectForKey:@"lat"]);
-        NSLog(@"lon: %@", [[feed objectForKey:@"location"] objectForKey:@"lon"]);
-        MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
-//        CLLocation *actualLocation = [[CLLocation alloc] initWithLatitude:[[[feed objectForKey:@"location"] objectForKey:@"lat"] doubleValue] longitude:[[[feed objectForKey:@"location"] objectForKey:@"lon"] doubleValue]];
+//        NSLog(@"lat: %@", [[feed objectForKey:@"location"] objectForKey:@"lat"]);
+//        NSLog(@"lon: %@", [[feed objectForKey:@"location"] objectForKey:@"lon"]);
         CLLocationCoordinate2D location;
         location.latitude = [[[feed objectForKey:@"location"] objectForKey:@"lat"] doubleValue];
         location.longitude = [[[feed objectForKey:@"location"] objectForKey:@"lon"] doubleValue];
-        [annot setCoordinate:(location)];
+        
+        MapFeedAnnotation *annot = [[MapFeedAnnotation alloc] initWithCoordinate:location];
+//        MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
+//        CLLocation *actualLocation = [[CLLocation alloc] initWithLatitude:[[[feed objectForKey:@"location"] objectForKey:@"lat"] doubleValue] longitude:[[[feed objectForKey:@"location"] objectForKey:@"lon"] doubleValue]];
+//        [annot setCoordinate:(location)];
         
         [feedMap addAnnotation:annot];
+        [annot autorelease];
+        [feed autorelease];
     }
+    [object autorelease];
     
 }
 

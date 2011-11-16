@@ -53,6 +53,7 @@
 		2B9D75D31465318700773D5A /* 187-pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B9D75D11465318700773D5A /* 187-pencil.png */; };
 		2B9D75D41465318700773D5A /* 187-pencil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B9D75D21465318700773D5A /* 187-pencil@2x.png */; };
 		2B9D75D71465327A00773D5A /* SettingsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B9D75D51465327A00773D5A /* SettingsViewController_iPad.xib */; };
+		2BD232831473ADDB00072FDE /* MapFeedAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD232821473ADDB00072FDE /* MapFeedAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,8 @@
 		2B9D75D11465318700773D5A /* 187-pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "187-pencil.png"; sourceTree = "<group>"; };
 		2B9D75D21465318700773D5A /* 187-pencil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "187-pencil@2x.png"; sourceTree = "<group>"; };
 		2B9D75D61465327A00773D5A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SettingsViewController_iPad.xib; sourceTree = "<group>"; };
+		2BD232811473ADDB00072FDE /* MapFeedAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapFeedAnnotation.h; sourceTree = "<group>"; };
+		2BD232821473ADDB00072FDE /* MapFeedAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapFeedAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +226,8 @@
 				2B9D75C2146530B800773D5A /* 95-equalizer@2x.png */,
 				2B9D7591146526FD00773D5A /* AppDelegate.h */,
 				2B9D7592146526FD00773D5A /* AppDelegate.m */,
+				2BD232811473ADDB00072FDE /* MapFeedAnnotation.h */,
+				2BD232821473ADDB00072FDE /* MapFeedAnnotation.m */,
 				2B891B161472F08B00FB908B /* MapViewController.h */,
 				2B891B171472F08B00FB908B /* MapViewController.m */,
 				2B9D75B31465277500773D5A /* SettingsViewController.h */,
@@ -357,6 +362,7 @@
 				2B208A7114731DDB00B25E51 /* SBJsonTokeniser.m in Sources */,
 				2B208A7214731DDB00B25E51 /* SBJsonUTF8Stream.m in Sources */,
 				2B208A7314731DDB00B25E51 /* SBJsonWriter.m in Sources */,
+				2BD232831473ADDB00072FDE /* MapFeedAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
