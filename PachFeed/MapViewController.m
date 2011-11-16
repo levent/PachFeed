@@ -46,13 +46,23 @@
     
 }
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
+- (void)viewDidAppear:(BOOL)animated
 {
     locationController = [[CLController alloc] init];
     locationController.delegate = self;
-    [locationController.locationManager startMonitoringSignificantLocationChanges];
+    [locationController.locationManager startMonitoringSignificantLocationChanges];   
+}
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [locationController.locationManager stopMonitoringSignificantLocationChanges];
+    NSLog(@"View did disappear");
 }
 
 - (void)viewDidUnload

@@ -44,6 +44,7 @@
         viewController3 = [[[MapViewController alloc] initWithNibName:@"MapViewController_iPad" bundle:nil] autorelease];
         viewController4 = [[[SettingsViewController alloc] initWithNibName:@"SettingsViewController_iPad" bundle:nil] autorelease];
     }
+    mapViewController = viewController3;
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, viewController3, viewController4, nil];
     self.window.rootViewController = self.tabBarController;
@@ -61,7 +62,9 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    [mapViewController viewDidDisappear:NO];
     /*
+     
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
